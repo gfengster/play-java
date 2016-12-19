@@ -1,13 +1,10 @@
 package models;
 
-import javax.persistence.*;
+import org.bson.types.ObjectId;
 
-@Entity
 public class Person {
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-	public Long id;
+	public ObjectId id;
 
     public String name;
     

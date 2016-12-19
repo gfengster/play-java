@@ -1,0 +1,12 @@
+@()
+
+@main("Search") {
+    <script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
+
+
+
+    <form method="POST" action="@routes.PersonController.search()">
+        <p>Name:<input type="text" name="name"/></p>
+        <button>Search Person</button>
+    </form>
+}

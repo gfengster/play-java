@@ -1,4 +1,4 @@
 $ ->
   $.get "/persons", (persons) ->
     $.each persons, (index, person) ->
-      $("#persons").append $("<li>").text person.name person.email
+      $("#persons").append $("<li>").text "Name: " + person.name  + "   EMail: " + person.email

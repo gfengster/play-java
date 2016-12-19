@@ -20,9 +20,8 @@ public class UnitTest {
 
     @Test
     public void checkIndex() {
-        JPAApi jpaApi = mock(JPAApi.class);
         FormFactory formFactory = mock(FormFactory.class);
-        final PersonController controller = new PersonController(formFactory, jpaApi);
+        final PersonController controller = new PersonController(formFactory);
         final Result result = controller.index();
 
         assertEquals(OK, result.status());

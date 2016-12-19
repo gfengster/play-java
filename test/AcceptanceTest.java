@@ -11,8 +11,8 @@ public class AcceptanceTest {
      */
     @Test
     public void test() {
-        running(testServer(3333, fakeApplication(inMemoryDatabase())), HTMLUNIT, browser -> {
-            browser.goTo("http://localhost:3333");
+        running(testServer(9000, fakeApplication(inMemoryDatabase())), HTMLUNIT, browser -> {
+            browser.goTo("http://localhost:9000");
             assertThat(browser.pageSource(), containsString("Add Person"));
         });
     }

@@ -6,10 +6,15 @@ lazy val root = (project in file(".")).enablePlugins(PlayJava)
 
 scalaVersion := "2.11.8"
 
-libraryDependencies += javaJpa
+resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases"
 
-libraryDependencies += "org.mockito" % "mockito-core" % "2.1.0"
+libraryDependencies ++= Seq(
+  jdbc,
+  cache,
+  "com.novus" %% "salat" % "1.9.9",
+  javaJpa,
+  specs2 % Test
+  
+)
 
-libraryDependencies += javaWs % "test"
-
-libraryDependencies += "org.hibernate" % "hibernate-core" % "5.2.5.Final"
+routesGenerator := InjectedRoutesGenerator
