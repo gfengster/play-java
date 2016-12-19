@@ -3,7 +3,7 @@ package controllers;
 import static play.libs.Json.toJson;
 
 import java.net.UnknownHostException;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -99,7 +99,7 @@ public class PersonController extends Controller {
     	if (table == null)
     		return ok(views.html.errordb.render());
     	
-    	final List<Person> persons = new ArrayList<>();
+    	final List<Person> persons = new LinkedList<>();
     	final DBCursor cursor = table.find();
     	
     	while(cursor.hasNext()) {
@@ -123,7 +123,7 @@ public class PersonController extends Controller {
     	
     	obj.put("name", person.name);
     	
-    	final List<Person> persons = new ArrayList<>();
+    	final List<Person> persons = new LinkedList<>();
     	final DBCursor cursor = table.find(obj);
     	
     	while(cursor.hasNext()) {
